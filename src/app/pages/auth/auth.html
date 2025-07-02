@@ -1,6 +1,6 @@
-<div class="row justify-content-md-center pt-5">
-    <div class="col col-lg-4 ">
-        <mat-card appearance="filled">
+<div class="row justify-content-md-center p-5">
+    <div class="col col-lg-4">
+       <mat-card appearance="filled">
             <mat-card-header>
                 <mat-card-title>Hola!</mat-card-title>
             </mat-card-header>
@@ -9,24 +9,23 @@
                     <mat-label>Usuario</mat-label>
                     <input matInput>
                 </mat-form-field>
-
-                 <mat-form-field class="full-width" appearance="outline">
+                <mat-form-field class="full-width" appearance="outline">
                     <mat-label>Contraseña</mat-label>
-                    <input type="password"  matInput>
-                    <button matIconButton matSuffix>
-                        <mat-icon>visibility</mat-icon>
+                    <input [type]="hide ? 'password' : 'text'" matInput>
+                    <button matIconButton matSuffix (click)="hide = !hide">
+                        <mat-icon>{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
+                {{ hide }}
 
                 <button class="full-width" matButton="filled">
                     Acceder
                 </button>
-
                 <button class="full-width mt-2" matButton="text">
-                    ¿Olvidaste Contraseña?
+                    ¿Olvidaste la Contraseña?
                 </button>
-
+                
             </mat-card-content>
-        </mat-card>
+       </mat-card>
     </div>
 </div>

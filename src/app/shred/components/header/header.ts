@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router  } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +8,13 @@ import { Router  } from '@angular/router';
   styleUrl: './header.scss'
 })
 export class Header {
-  constructor(private router: Router){}
 
-  navegarLogin(){
+  constructor(private router: Router) { }
+
+  navegarLogin() {
     this.router.navigate(['/auth']);
   }
+
 }
 
 

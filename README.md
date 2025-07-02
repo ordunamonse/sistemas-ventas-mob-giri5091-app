@@ -59,6 +59,14 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 git remote -v
+# View existing remote
+# origin  git@github.com:ordunamonse/sistemas-ventas-mob-giri5091-app.git (fetch)
+# origin  git@github.com:ordunamonse/sistemas-ventas-mob-giri5091-app.git (push)
 
-#origin  git@github.com:ordunamonse/sistemas-ventas-mob-giri5091-app.git (fetch)
-#origin  git@github.com:ordunamonse/sistemas-ventas-mob-giri5091-app.git (push)
+git remote set-url origin https://github.com/user/repo2.git
+# Chage the 'origin' remote's URL
+
+git remote -v
+# Verify new remote URL 
+# origin  git@github.com:ordunamonse/sistemas-ventas-mob-giri5091-app.git (fetch)
+# origin  git@github.com:ordunamonse/sistemas-ventas-mob-giri5091-app.git (push)
