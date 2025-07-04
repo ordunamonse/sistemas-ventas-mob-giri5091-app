@@ -13,9 +13,6 @@ on:
 jobs:
     sistema-ventas-web:
         runs-on: ubuntu-latest
-        defaults:
-            run:
-                working-directory: sistemas-ventas-web
         steps:
             - uses: actions/checkout@4 # Clona el repositorio actual
             - uses: actions/setup-node@4 # Usar Node
@@ -28,15 +25,15 @@ jobs:
               uses: actions/cache@4
               with:
                 path: sistemas-ventas-web/node_modules
-                key: ${{ runner.os }}-node-${{ hashFiles('sistemas-ventas-web/package-lock.json') }}
+                key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
             # Instalar las dependencias
             - name: Install dependencies
               # No ejecutar si se  obtuvo node_modulesde cache
               if: steps.node-cache.outputs.cache-hit != 'true'
               run: npm install
-              working-directory: sistemas-ventas-web
-              
+
+
 
 
                 
