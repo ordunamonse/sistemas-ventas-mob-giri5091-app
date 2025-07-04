@@ -27,14 +27,16 @@ jobs:
               id: node-cache
               uses: actions/cache@4
               with:
-                path: node_modules
-                key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                path: sistemas-ventas-web/node_modules
+                key: ${{ runner.os }}-node-${{ hashFiles('sistemas-ventas-web/package-lock.json') }}
 
             # Instalar las dependencias
             - name: Install dependencies
               # No ejecutar si se  obtuvo node_modulesde cache
               if: steps.node-cache.outputs.cache-hit != 'true'
               run: npm install
+              working-directory: sistemas-ventas-web
+              
 
 
                 
