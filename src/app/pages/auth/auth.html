@@ -5,26 +5,33 @@
                 <mat-card-title>Hola!</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <mat-form-field class="full-width pt-2" appearance="outline">
-                    <mat-label>Usuario</mat-label>
-                    <input matInput>
-                </mat-form-field>
-                <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>Contraseña</mat-label>
-                    <input [type]="hide ? 'password' : 'text'" matInput>
-                    <button matIconButton matSuffix (click)="hide = !hide">
-                        <mat-icon>{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
-                </mat-form-field>
-                {{ hide }}
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> 
+                   <mat-form-field class="full-width pt-2" appearance="outline">
+                       <mat-label>Usuario</mat-label>
+                       <input matInput formControlName="username">
+                       <mat-error>
+                        {{baseForm.getErrorMessage(loginForm.get("username"))}}
+                       </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input [type]="hide ? 'password' : 'text'" matInput formControlName="password">
+                        <button matIconButton matSuffix (click)="hide = !hide">
+                            <mat-icon>{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                         <mat-error>
+                            {{baseForm.getErrorMessage(loginForm.get("username"))}}
+                        </mat-error>
+                    </mat-form-field>
+                    {{ hide }}
 
-                <button class="full-width" matButton="filled">
+                <button type="submit" class="full-width" matButton="filled">
                     Acceder
                 </button>
-                <button class="full-width mt-2" matButton="text">
+                <button type="button" class="full-width mt-2" matButton="text">
                     ¿Olvidaste la Contraseña?
                 </button>
-                
+                </form>
             </mat-card-content>
        </mat-card>
     </div>

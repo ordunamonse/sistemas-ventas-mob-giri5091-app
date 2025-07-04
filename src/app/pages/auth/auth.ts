@@ -27,7 +27,21 @@ export class Auth implements OnInit, OnDestroy {
     console.log("init OnInit");
   }
 
+  onSubmit(){
+    // verificar que el formulario sea correcto
+    if (this.loginForm.invalid) return;
+
+
+    // si todo  el formulario es correcto obtener  el usuario y contraseña para validarlos
+    const form = this.loginForm.value;
+
+    console.log(form);
+
+  }
+
   ngOnDestroy(): void {
-    console.log("destroy");
+    this.destroy$.next({});
+    this.destroy$.complete();
+  
   }
 }
