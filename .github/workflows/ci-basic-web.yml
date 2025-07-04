@@ -4,13 +4,11 @@ name: CI/CD Frontend
 # Controla lo  que se va a ejecutar (Trigger) puede ser un pull, push, pull request
 on: 
     push:
-        branches: [release, develop ]
-        paths:
-            -'**'
+        branches: [release, develop, feature/auth ]
+
     pull_request:
-        branches: [release, develop]
-        paths:
-            -'**'
+        branches: [release, develop, feature/auth]
+
 # Pasos a realizar
 jobs:
     sistema-ventas-web:
@@ -37,7 +35,7 @@ jobs:
               # No ejecutar si se  obtuvo node_modulesde cache
               if: steps.node-cache.outputs.cache-hit != 'true'
               run: npm install
-              
+
 
                 
 
