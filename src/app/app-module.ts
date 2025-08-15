@@ -6,6 +6,10 @@ import { App } from './app';
 import { MaterialModule } from './material.modules';
 import { Header } from './shred/components/header/header';
 import { Footer } from './shred/components/footer/footer';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -16,7 +20,9 @@ import { Footer } from './shred/components/footer/footer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
@@ -24,3 +30,5 @@ import { Footer } from './shred/components/footer/footer';
   bootstrap: [App]
 })
 export class AppModule { }
+
+

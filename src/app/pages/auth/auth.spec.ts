@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Auth } from './auth';
-import { MatCardModule } from '@angular/material/card';
+import { MatCard, MatCardModule } from '@angular/material/card';
 import { MaterialModule } from '../../material.modules';
 import { ReactiveFormsModule } from '@angular/forms';
 

@@ -5,7 +5,6 @@ import { HomeRoutingModule } from './home-routing-module';
 import { Home } from './home';
 import { MaterialModule } from '../../material.modules';
 
-
 @NgModule({
   declarations: [
     Home

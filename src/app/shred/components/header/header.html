@@ -1,13 +1,17 @@
 <mat-toolbar>
-  <button matIconButton>
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button>
+    <mat-icon style="color: #700270">menu</mat-icon>
   </button>
+
   <a [routerLink]="'home'">My App</a>
-  <span class="spacer "></span>
-  <button matIconButton>
-    <mat-icon>favorite</mat-icon>
+
+  <span class="spacer"></span>
+
+  <button mat-icon-button>
+    <mat-icon style="color: #080708">favorite</mat-icon>
   </button>
+
   <button mat-button (click)="navegarLogin()">
     Iniciar Sesion
   </button>
-  </mat-toolbar>
+</mat-toolbar>

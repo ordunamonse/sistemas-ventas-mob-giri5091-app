@@ -10,7 +10,7 @@ on:
            
 # Pasos a realizar
 jobs:
-    sistemas-ventas-web:
+    sistema-ventas-web:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4 #Clonar el repositorio actual
